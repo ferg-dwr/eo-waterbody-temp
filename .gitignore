@@ -29,3 +29,5 @@ env/
 .vscode/
 .idea/
 .DS_Store
+# Windows/WSL mark-of-the-web stream files
+*:Zone.Identifier
