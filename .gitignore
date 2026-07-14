@@ -1,0 +1,31 @@
+# Milestone tracker is the local source of truth, not version-controlled
+ROADMAP.md
+
+# Data (kept out of git; see data/ conventions)
+data/
+*.tif
+*.tiff
+*.h5
+*.nc
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+.conda/
+env/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

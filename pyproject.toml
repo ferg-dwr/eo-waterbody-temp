@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eo-waterbody-temp"
+description = "Earth-observation water-surface temperature over the Yolo Bypass, with dissolved-oxygen-saturation diagnostics."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Fernando Romero Galvan" }]
+keywords = [
+  "remote-sensing",
+  "thermal-infrared",
+  "ECOSTRESS",
+  "Landsat",
+  "water-surface-temperature",
+  "dissolved-oxygen",
+  "Yolo-Bypass",
+]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.14",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = ["numpy"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+io = ["rasterio", "xarray", "earthaccess", "shapely", "pyproj"]
+viz = ["matplotlib"]
+dev = ["pytest", "pytest-cov", "ruff", "black"]
+
+[project.urls]
+Repository = "https://github.com/ferg-dwr/eo-waterbody-temp"
+
+[tool.hatch.version]
+path = "src/eo_waterbody_temp/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eo_waterbody_temp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
