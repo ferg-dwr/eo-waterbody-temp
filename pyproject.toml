@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "eo-waterbody-temp"
 description = "Earth-observation water-surface temperature over the Yolo Bypass, with dissolved-oxygen-saturation diagnostics."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "MIT"
 authors = [{ name = "Fernando Romero Galvan" }]
 keywords = [
@@ -19,7 +19,7 @@ keywords = [
   "Yolo-Bypass",
 ]
 classifiers = [
-  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.14",
   "License :: OSI Approved :: MIT License",
   "Topic :: Scientific/Engineering :: GIS",
@@ -28,7 +28,7 @@ dependencies = ["numpy"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
-io = ["rasterio", "xarray", "earthaccess", "shapely", "pyproj"]
+io = ["rasterio", "shapely", "pyproj", "earthaccess>=0.18,<1.0"]
 viz = ["matplotlib"]
 dev = ["pytest", "pytest-cov", "ruff", "black"]
 
@@ -44,14 +44,18 @@ packages = ["src/eo_waterbody_temp"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+filterwarnings = [
+  # upstream rasterio 1.5 x numpy 2.5 windowed-read interaction; not our code
+  "ignore:Setting the shape on a NumPy array has been deprecated:DeprecationWarning",
+]
 
 [tool.ruff]
 line-length = 88
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "UP", "B"]
 
 [tool.black]
 line-length = 88
-target-version = ["py311"]
+target-version = ["py312"]
