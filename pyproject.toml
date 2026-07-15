@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "eo-waterbody-temp"
 description = "Earth-observation water-surface temperature over the Yolo Bypass, with dissolved-oxygen-saturation diagnostics."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "MIT"
 authors = [{ name = "Fernando Romero Galvan" }]
 keywords = [
@@ -19,7 +19,7 @@ keywords = [
   "Yolo-Bypass",
 ]
 classifiers = [
-  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.14",
   "License :: OSI Approved :: MIT License",
   "Topic :: Scientific/Engineering :: GIS",
@@ -51,11 +51,11 @@ filterwarnings = [
 
 [tool.ruff]
 line-length = 88
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "UP", "B"]
 
 [tool.black]
 line-length = 88
-target-version = ["py311"]
+target-version = ["py312"]
