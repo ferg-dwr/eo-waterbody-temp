@@ -28,7 +28,7 @@ dependencies = ["numpy"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
-io = ["rasterio", "xarray", "earthaccess", "shapely", "pyproj"]
+io = ["rasterio", "shapely", "pyproj", "earthaccess>=0.18,<1.0"]
 viz = ["matplotlib"]
 dev = ["pytest", "pytest-cov", "ruff", "black"]
 
@@ -44,6 +44,10 @@ packages = ["src/eo_waterbody_temp"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+filterwarnings = [
+  # upstream rasterio 1.5 x numpy 2.5 windowed-read interaction; not our code
+  "ignore:Setting the shape on a NumPy array has been deprecated:DeprecationWarning",
+]
 
 [tool.ruff]
 line-length = 88
