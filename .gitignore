@@ -2,9 +2,6 @@
 ROADMAP.md
 
 # Data (kept out of git; see data/ conventions)
-data/
-*.tif
-*.tiff
 *.h5
 *.nc
 
@@ -31,3 +28,14 @@ env/
 .DS_Store
 # Windows/WSL mark-of-the-web stream files
 *:Zone.Identifier
+
+# --- written data lives under data/ (git-ignored), except tracked inputs ---
+data/scratch/
+data/outputs/
+*.tif
+*.tiff
+*.h5
+*.nc
+# keep small tracked inputs and the committed test fixture
+!data/polys/**
+!tests/fixtures/**
