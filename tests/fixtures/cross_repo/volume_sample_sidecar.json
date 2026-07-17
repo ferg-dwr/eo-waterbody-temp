@@ -1,0 +1,16 @@
+{
+  "file": "yolo_WVOL_wse-perimeter-v1_T10SFH_20260115T013912Z.tif",
+  "aoi": "yolo",
+  "product": "WVOL",
+  "description": "Water volume per pixel over the Yolo Bypass (DSWx-S1 water mask + DEM).",
+  "units": "m^3",
+  "model_id": "wse-perimeter-v1",
+  "method": "wse-perimeter-v1",
+  "variant": null,
+  "crs": "EPSG:32610",
+  "nodata": {"value": -9999.0, "meaning": "outside AOI polygon; blind pixels carry their bound"},
+  "source_id": "OPERA_L3_DSWx-S1_T10SFH_20260115T013912Z_20260116T....",
+  "acquisition_time_utc": "2026-01-15T01:39:12+00:00",
+  "software": {"repo": "eo-water-volume-estimator", "version": "0.3.1"},
+  "diagnostics": {"invalid_fraction": 0.031, "wse_m": 1.85}
+}
