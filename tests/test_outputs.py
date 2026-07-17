@@ -44,8 +44,7 @@ def _wst(data):
 def test_filename_scheme_wst(tmp_path):
     cog, side = write_temperature(_wst([[10.0, 11.0], [12.0, np.nan]]), tmp_path)
     assert (
-        cog.name
-        == "yolo_WST_ecostress_l2t_lste_v003_T10SFH_20260201T014232Z_LST.tif"
+        cog.name == "yolo_WST_ecostress_l2t_lste_v003_T10SFH_20260201T014232Z_LST.tif"
     )
     assert side.name.endswith(".json")
 
