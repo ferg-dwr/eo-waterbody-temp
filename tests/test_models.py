@@ -41,8 +41,7 @@ def test_every_registry_entry_documented_in_models_md():
 
 def test_model_id_extraction_from_method():
     assert (
-        model_id_from_method("ecostress_l2t_lste_v003:LST")
-        == "ecostress_l2t_lste_v003"
+        model_id_from_method("ecostress_l2t_lste_v003:LST") == "ecostress_l2t_lste_v003"
     )
     assert (
         model_id_from_method(
